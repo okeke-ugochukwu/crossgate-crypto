@@ -1,0 +1,517 @@
+@import '../../../utils/mixins';
+@import '../../../utils/screens';
+@import '../../../base/colors';
+
+.aboutCard {
+   @include flex(false, flex-end, column);
+   border-radius: 1.5rem; // 24px
+   border: 0.0625rem solid rgba(255, 255, 255, 0.30); // 1px
+   background: #0F0D03;
+   aspect-ratio: 1 / 0.76;
+   width: 100%;
+   height: 100%;
+   position: relative;
+   overflow: hidden;
+
+   &__els {
+      position: relative;
+   }
+
+   &__text {
+      position: relative;
+      padding: 1.5rem 1.75rem; // 24px 28px
+      max-width: 22.9375rem; // 367px
+
+      h3 {
+         font-weight: 500;
+      }
+
+      p {
+         color: #6D6D6D;
+      }
+   }
+
+   &:nth-child(1),
+   &:nth-child(4) {
+      aspect-ratio: 0.63 / 1;
+   }
+
+   &:nth-child(2) {
+      background: url('/src/assets/imgs/lwfs/bg.png') center / cover no-repeat;
+   }
+
+   &:nth-child(3) {
+      background: url('/src/assets/imgs/mcs/bg.png') center / cover no-repeat;
+   }
+
+   &.__lfs {
+      .aboutCard__bg {
+         position: absolute;
+         top: 0;
+         width: 100%;
+      }
+
+      .aboutCard__els {
+         width: 46.35%;
+         aspect-ratio: 1 / 1;
+         margin: auto;
+         position: relative;
+         @include flex(center, center, false);
+
+         &>div>* {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+         }
+
+         .__lfs__polygon {
+            height: 97%;
+         }
+
+         svg {
+            display: block;
+
+            //blurred polygon
+            &:nth-of-type(1) {
+               width: 100%;
+               height: 100%;
+               transition: fill .15s;
+            }
+
+            // rocket
+            &:nth-of-type(2) {
+               transition: color .15s;
+               color: #242421;
+               width: 42.15%;
+
+               path {
+                  transition: transform .15s;
+               }
+            }
+
+         }
+
+         @include laps {
+            width: 56.35%;
+         }
+      }
+
+      svg {
+         display: none;
+      }
+
+      &:hover {
+         .aboutCard__els {
+
+            svg {
+
+               //blurred polygon
+               &:nth-of-type(1) {
+                  fill: $cgYellow3;
+               }
+                  
+               // rocket
+               &:nth-of-type(2) {
+                  color: $cgYellow3;
+                  animation: 1s levitateRocket .2s ease-in-out infinite;
+
+                  @keyframes levitateRocket {
+                     0% {
+                        transform: translateY(0);
+                     }
+
+                     50% {
+                        transform: translateY(0.3125rem);
+                     }
+
+                     100% {
+                        transform: translateY(0);
+                     }
+                  }
+
+                  // body
+                  path:nth-of-type(1) {
+                  }
+
+                  //thrust
+                  path:nth-of-type(2) {
+                     transform: scale(.8)  translateY(21px);
+                     transition-delay: .2s;
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   &.__lwfs {
+      border-radius: 1.5rem;
+
+      .aboutCard__els {
+         height: 100%;
+         @include flex(center, center, false);
+      }
+
+      .iconBox {
+         transition: .15s;
+
+         &__wrapper {
+            width: 59.66%;
+            height: max-content;
+            @include flex(center, center, false);
+            gap: 0.5rem; // 8px
+         }
+
+         width: 27.77%;
+         aspect-ratio: 1 / 1;
+         @include flex(center, center, false);
+         border-radius: 0.75rem; // 12px
+         border: 1px solid #2a2a2a4d;
+         background: rgba(32, 32, 32, 0.1);
+         backdrop-filter: blur(0.25rem); // 4px
+
+         svg {
+            width: 53.33%;
+            color: #262626;
+         }
+      }
+
+      .divider {
+         &__wrapper {
+            * {
+               transition: .15s;
+            }
+
+            width: 37.03%;
+            height: 100%;
+            @include flex(center, center, false);
+            gap: 0.25rem; // 4px
+
+            // line icons
+            & > div:nth-child(1),  
+            & > div:nth-child(3)  {
+               width: 100%;
+               height: 0.125rem;
+               position: relative;
+               flex: 1 0 0;
+               background: #312F2D;
+
+               &::after {
+                  content: '';
+                  position: absolute;
+                  height: 100%;
+                  top: 0;
+                  width: 0; /* Initial width is 0 */
+                  background: $cgYellow3;
+                  transition: .15s;
+               }
+            }
+
+            & > div:nth-child(1) {
+               &::after {
+                  right: 0; /* Start from the right */
+               }
+            }
+
+            // money icon box
+            & > div:nth-child(2) {
+               width: 30%;
+               aspect-ratio: 1 / 1;
+               background: #262422;
+               border-radius: 100%;
+               @include flex(center, center, false);
+
+               & > div {
+                  width: 80%;
+                  aspect-ratio: 1 / 1;
+                  border: 2px solid rgba(255, 255, 255, 0.1);
+                  border-radius: 100%;
+                  @include flex(center, center, false);
+
+                  // money icon
+                  svg {
+                     width: 70%;
+                     color: white;
+                  }
+               }
+            }
+         }
+      }
+
+      &:hover {
+         .divider {
+
+            &__wrapper {
+               transition: .15s;
+
+               // line icons
+               & > div:nth-child(1) {
+                  &::after {
+                     width: 100%;
+                  }
+               }
+
+               & > div:nth-child(1),
+               & > div:nth-child(3) {
+                  &:after { 
+                     transition-delay: .4s;
+                  }
+               }
+
+               & > div:nth-child(3) {
+                  &::after {
+                     width: 100%; /* Expand to full width on hover */
+                     right: auto; /* Reset right position */
+                     left: 0; /* Start expanding from the left */  
+                  }
+               }
+
+
+               // money icon box
+               & > div:nth-child(2) {
+                  & > div {
+                  
+                     border: 2px solid $cgYellow3;
+                     transition-delay: .2s;
+
+                     // money icon
+                     svg {
+                        color:$cgYellow3;
+                     }
+                  }
+               }
+            }
+         }
+
+         .iconBox {
+           border: 1px solid $cgYellow3;
+            transition-delay: .6s;
+           
+            svg {
+               transition-delay: .6s;
+               color: $cgYellow3;
+            }
+         }
+      }
+   }
+   
+   &.__mcs {
+      .aboutCard__els {
+         height: 100%;
+         @include flex(center, center, false);
+      }
+
+      .blkBox {
+         &__wrapper {
+            background: #201E1D;
+            border-radius: 0.75rem; // 12px
+            width: 13.25%;
+            aspect-ratio: 1 / 1;
+            @include flex(center, center, false);
+
+            * {
+               transition: .15s;
+            }
+
+
+            & > div {
+               aspect-ratio: 1 / 1;
+               width: 78%;
+               border: 2px solid #99999923;
+               border-radius: 10px;
+               @include flex(center, center, false);
+
+               svg {
+                  width: 60%;
+                  color: white;
+                  transition: .15s;
+               }
+            }
+         }
+      }
+
+      &:hover {
+         .blkBox {
+            &__wrapper {
+               & > div {
+                  border: 0.125rem solid $cgYellow3;             
+
+                  svg {
+                     transition-delay: .2s;
+                     color: #ffcf30b4;
+                     animation: 1.5s levitateBox  linear infinite;
+
+                     @keyframes levitateBox {
+                        0% {
+                           transform: translateY(0) rotate(0deg);
+                        }
+
+                        50% {
+                           transform: translateY(0.125rem) rotate(180deg);
+                        }
+
+                        100% {
+                           transform: translateY(0) rotate(360deg);
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   &.__str {
+      .aboutCard__bg {
+         position: absolute;
+         top: 0;
+         width: 100%;
+      }
+
+      .aboutCard__els {
+         padding: 1.5rem 1.75rem 0rem; // 24px 28px
+         height: 100%;
+         @include flex(flex-end, center, false);
+
+         &::before {
+            position: absolute;
+            z-index: 1;
+            content: '';
+            width: 100%;
+            height: 100%;
+            transition: .15s;
+            opacity: 1;
+            background: linear-gradient(0deg, #0F0D03 9.93%, rgba(15, 13, 3, 0.00) 92.25%);
+         }
+      }
+
+      .strCards {
+         &__wrapper {
+            width: 100%;
+            height: 79.68%;
+            position: relative;
+            z-index: 0;
+         }
+
+         &__inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 0;
+            @include flex(center, center, false);
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem; // 24px
+            border: 0.0625rem solid #ffffff0d; // 1px
+            background: linear-gradient(206deg, rgba(255, 255, 255, 0.12) 32.53%, rgba(255, 255, 255, 0.00) 63.1%), #0F0D03;
+            backdrop-filter: blur(0.2188rem); // 3.5px
+            transition: .15s;
+
+            // texture
+            img {
+               position: absolute;
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               mix-blend-mode: overlay;
+            }
+         }
+
+         width: 100%;
+         height: 100%;
+         position: relative;
+         border-radius: 1.5rem; // 24px
+         z-index: 2;
+
+         &::before,
+         &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            transition: .15s;
+         }
+
+         &::before {
+            top: -1rem; // 16px
+            border-radius: 1rem; // 16px
+            border: 0.0625rem solid #ffffff05; // 1px
+            background: #ffffff0d;
+            backdrop-filter: blur(0.0625rem); // 1px
+         }
+
+         &::after {
+            top: -0.5rem; // 8px
+            border-radius: 1.25rem; // 20px
+            border: 0.0625rem solid #ffffff0d; // 1px
+            border-bottom: none;
+            background: #ffffff0d;
+            backdrop-filter: blur(0.125rem); //2px
+         }
+
+         svg {
+            $sparklesX: 6.62%; // 20px
+            $sparklesY: 8.49%; // 30px
+            transition: .15s;
+
+            // sparkles
+            &:nth-of-type(1),
+            &:nth-of-type(2) {
+               position: absolute;
+               z-index: 1;
+               width: 7.94%; // 1.5rem;
+               top: $sparklesY;
+               left: $sparklesX;
+               opacity: 0.06;
+            }
+
+            &:nth-of-type(2) {
+               left: unset;
+               right: $sparklesX;
+            }
+
+            // security lock
+            &:nth-of-type(3) {
+               color: #545454;
+               width: 46.35%;
+               stroke: #545454;
+            }
+         }
+      }
+
+      &:hover {
+         .strCards {
+            &__inner {
+               transform: translateY(0.625rem);
+               transition-delay: .3s;
+               svg {
+                  color: $cgYellow3;
+                  stroke: $cgYellow3;
+
+                  // sparkles
+                  &:nth-of-type(1),
+                  &:nth-of-type(2) {
+                     opacity: 1;
+                  }
+
+                  &:nth-of-type(3) {
+                     transition-delay: .3s;
+                  }
+               }
+            }
+            
+            &::after {
+               transform: translateY(0.3125rem);
+               transition-delay: .3s;
+            }
+         }
+
+         .aboutCard__els::before {
+            opacity: 0;
+            transition-delay: .3s;
+         }
+      }
+   }
+}

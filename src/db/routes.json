@@ -1,0 +1,23 @@
+[
+   {
+      "name": "security",
+      "label": "Security",
+      "path": "/",
+      "external": false
+   },
+
+   {
+      "name": "support",
+      "label": "Support",
+      "path": "/",
+      "external": false
+   },
+
+   {
+      "name": "resources",
+      "label": "Resources",
+      "path": "/",
+      "external": false
+   }
+
+]

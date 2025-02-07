@@ -1,0 +1,66 @@
+[
+   [
+      "Resources",
+
+      [
+         {
+            "label": "Pricing",
+            "path": "/"
+         },
+
+         {
+            "label": "Blog",
+            "path": "/"
+         },
+
+         {
+            "label": "Support",
+            "path": "/"
+         }
+      ]
+   ],
+
+   [
+      "Legal",
+
+      [
+         {
+            "label": "Terms of use",
+            "path": "/"
+         },
+
+         {
+            "label": "Privacy policy",
+            "path": "/"
+         },
+
+         {
+            "label": "Link Eightteen",
+            "path": "/"
+         }
+      ]
+   ],
+
+   [
+      "Socials",
+
+      [
+         {
+            "label": "X(Twitter)",
+            "path": "/"
+         },
+
+         {
+            "label": "Facebook",
+            "path": "/"
+         },
+
+         {
+            "label": "LinkedIn",
+            "path": "/"
+         }
+      ]
+   ]
+
+
+]

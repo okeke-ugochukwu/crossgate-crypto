@@ -1,0 +1,55 @@
+@import '../../utils/mixins';
+@import '../../utils/screens';
+@import '../../base/colors';
+
+.newsLetter {
+   &__wrapper {
+      @include flex(false, false, column);
+      gap: 1rem; // 16px
+   }
+
+   &__form {
+      border-radius: 685.4781rem; //1 0967.65px
+      border: 0.0625rem solid #B1B1B1; // 1px
+      padding: 4px; // 4px
+      @include flex(stretch, false, row);
+      height: max-content; 
+
+      input {
+         &[type="email"] {
+            width: 100%;
+            display: block;
+            border-radius: 685.4781rem; //1 0967.65px
+            color: #888;
+            background: transparent;
+            padding: 0.75rem; // 12px
+            max-height: 100%;
+
+            &:focus {
+               outline: none;
+            }
+         }
+      }
+
+      button {
+         font-size: 0.875rem; // 14px
+         line-height: normal;
+         width: max-content;
+         height: 100%;
+         align-self: center;
+         margin-top: -0.0625rem;
+         margin-right: 0.0625rem;
+      }
+   }
+
+   &__foot {
+      font-size: 0.75rem; // 12px
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      
+      a {
+         text-decoration-line: underline;
+      }
+   }
+}

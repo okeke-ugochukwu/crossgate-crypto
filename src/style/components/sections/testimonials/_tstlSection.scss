@@ -1,0 +1,113 @@
+@import '../../../utils/mixins';
+@import '../../../utils/screens';
+@import '../../../base/colors';
+
+
+.tstls {
+
+   &__wrapper {
+
+   }
+
+   & > .margin {
+      @include flex(center, center, column);
+      gap: 3.125rem; // 3.125rem
+      padding: 3.75rem 1rem; // 3.75rem 16px
+
+      @include tabs {
+         padding: 6.25rem 2.5rem // 100px 40px
+      }
+
+      @include laps {
+         gap: 6.25rem; // 100px
+      }
+
+      @include desktop {
+         padding: 12.031vw; // 154px
+      }
+   }
+
+   background: url('/src/assets/imgs/png/tstl-bg.png') center / cover no-repeat;
+
+   &__content {
+      width: 100%;
+      max-width: 84.21vw; // 1078px
+      @include flex(center, false, row);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+   }
+
+   &__nav {
+      @include flex(center, center, false);
+      gap: 0.75rem; // 12px
+   }
+
+   &__navBttn {
+      @include flex(center, center, false);
+      aspect-ratio: 1 / 1;
+      width: 40px; // 40px
+      padding: 0.875rem; // 14px
+      border: 0.0938rem solid #020308; // 1px
+      border-radius: 0.75rem; // 12px
+
+      &:hover {
+         background: rgba(0, 0, 0, 0.089);
+      }
+
+      // styles for gsap initial state
+      opacity: 0;
+      &:nth-child(1) {
+         margin: 0 1.25rem 0 0;
+      }
+
+      &:nth-child(2) {
+         margin: 0 0 0 1.25rem;
+      }
+
+      svg {
+         width: 40%;
+         color: #020308;
+      }
+
+      @include tabs {
+         width: 3.75rem; //60px
+      }
+   }
+}
+
+.tstl {
+   color: #020308;
+   width: 100%;
+   min-width: 100%;
+   scroll-snap-align: center;
+   
+   &__meta {
+      @include flex(center, center, false);
+      gap: 0.5rem; // 8px
+   }
+
+   &__avatar {
+      width: 2.5rem; // 40px
+      aspect-ratio: 1 / 1;
+   }
+   
+   &__body {
+      font-size: 2rem; //62px
+      text-align: center;
+      font-style: normal;
+      font-weight: 500;
+
+      &Inner {
+         width: max-content;
+      }
+
+      @include laps {
+         font-size: 3.875rem; //62px
+         line-height: 4.75rem; /* 76px, 122.581% */
+      }
+   }
+
+   &:not(:nth-child(1)) {
+   }
+}

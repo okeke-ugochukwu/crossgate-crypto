@@ -1,0 +1,32 @@
+@import '../utils/screens';
+@import "../utils/mixins";
+
+.no-scrollbar {
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+
+   & {
+      ::-webkit-scrollbar {
+         display: none;
+      }
+   }
+}
+
+.block-clip {
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+   // font-kerning: none; 
+   // position: relative; 
+}
+
+.margin {
+   padding: 2.5rem 1rem; // 40px 16px
+
+   @include tabs {
+      padding: 2.5rem // 40px
+   }
+
+   @include desktop {
+      padding: 6.25vw // 80px;
+      // padding: 3.75rem // 60px;
+   }
+}
