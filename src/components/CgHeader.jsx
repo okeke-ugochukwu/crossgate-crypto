@@ -40,7 +40,7 @@ const CgHeader = () => {
                   text="Join Our Discord"
                >
                   <img
-                    src="/src/assets/imgs/svg/discord.svg"
+                    src="/imgs/svg/discord.svg"
                     alt="discord-icon"
                     className="w-5"
                   />

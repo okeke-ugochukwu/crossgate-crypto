@@ -38,7 +38,7 @@ const TestimonialSection = () => {
                               >
                                     <div className="tstl__meta fadeInUp">
                                        <img
-                                       src="/src/assets/imgs/png/avatar.png"
+                                       src="/imgs/png/avatar.png"
                                        alt="avatar" className="tstl__avatar"
                                        />
 

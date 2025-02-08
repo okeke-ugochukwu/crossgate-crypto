@@ -24,7 +24,7 @@ const HeroSection = () => {
                <StarsBg />
 
                <img
-                 src="/src/assets/imgs/webp/lights.webp"
+                 src="/imgs/webp/lights.webp"
                  alt="lights"
                  className="hero__lights"
                />

@@ -6,7 +6,7 @@ const StrCard = (props) => {
       <div className={`aboutCard __str ${props.className}`}>
          <img
             className="aboutCard__bg"
-            src="/src/assets/imgs/lfs/bg.png"
+            src="/imgs/lfs/bg.png"
             alt="gold-matrix-background"
             loading="lazy"
          />
@@ -18,8 +18,8 @@ const StrCard = (props) => {
                   <div className="strCards__inner">
 
                      <img
-                     src="/src/assets/imgs/str/texture.png"
-                     alt="texture-img"
+                        src="/imgs/str/texture.png"
+                        alt="texture-img"
                      />
 
                      <Sparkles className="sparkles" />

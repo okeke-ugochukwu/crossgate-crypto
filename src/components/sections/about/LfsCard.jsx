@@ -6,7 +6,7 @@ const LfsCard = (props) => {
       <div className={`aboutCard __lfs ${props.className}`}>
          <img
             className="aboutCard__bg"
-            src="/src/assets/imgs/lfs/bg.png"
+            src="/imgs/lfs/bg.png"
             alt="gold-matrix-background"
             loading="lazy"
          />
@@ -16,7 +16,7 @@ const LfsCard = (props) => {
                <BlurredPolygon />
 
                <img
-                  src="/src/assets/imgs/lfs/polygon.svg"
+                  src="/imgs/lfs/polygon.svg"
                   className="__lfs__polygon" alt="polygon" 
                />
               
