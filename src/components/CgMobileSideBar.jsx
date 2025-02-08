@@ -13,7 +13,13 @@ const CgMobileSideBar = () => {
                type="link"
                to="/"
                text="Join Our Discord"
-            ></AuxButton>
+            >
+               <img
+                  src="/src/assets/imgs/svg/discord.svg"
+                  alt="discord-icon"
+                  className="w-5"
+               />
+            </AuxButton>
          </CgMainNav>
       </aside>
    )

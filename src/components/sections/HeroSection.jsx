@@ -1,6 +1,6 @@
 import '@/style/components/sections/_heroSection.scss'
 
-import HeroImg from '@/assets/imgs/png/crossgate-mobile-screenshot.png'
+import HeroImg from '@/assets/imgs/webp/crossgate-mobile-screenshot.webp'
 import TonImg  from '@/assets/imgs/png/3d-ton.png'
 import BitCoinImg  from '@/assets/imgs/png/3d-bitcoin.png'
 
@@ -10,6 +10,7 @@ import PrimaryButton from "@/components/buttons/PrimaryButton"
 
 import { useEffect } from 'react'
 import { initHeroAnimation } from '@/animations/hero'
+import StarsBg from '@/components/sections/StarsBg'
 
 const HeroSection = () => {
    useEffect(() => {
@@ -20,6 +21,14 @@ const HeroSection = () => {
       <div className="hero__wrapper">
          <section className="hero">
             <div className="margin">
+               <StarsBg />
+
+               <img
+                 src="/src/assets/imgs/webp/lights.webp"
+                 alt="lights"
+                 className="hero__lights"
+               />
+
                <CgHeader />
 
                <div className="hero__text normal-text">

@@ -18,8 +18,6 @@ async function initLenis(store, payload) {
       content: payload ? payload.content : document.documentElement,
       autoResize: true,
       wheelMultiplier: 0.8,
-      smooth: true,
-      smoothWheel: true,
       easing: (x) => Math.sqrt(1 - Math.pow(x - 1, 2))
    })
 

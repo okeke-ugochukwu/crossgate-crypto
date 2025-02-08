@@ -31,7 +31,7 @@ const StepsSection = () => {
                   <div className="steps__body">
                      <div className="steps__banner fadeInUp">
                         <img
-                           src="/src/assets/imgs/png/steps-banner.png"
+                           src="/src/assets/imgs/webp/steps-banner.webp"
                            alt="crossgate-yellow-pattern-background"
                            className="banner"
                            loading="lazy"

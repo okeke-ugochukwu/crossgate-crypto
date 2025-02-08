@@ -18,6 +18,19 @@
 
    &__nav {
       display: none;
+
+      @include laps {
+         display: block;
+         width: max-content;
+         margin-right: -13vw;
+         transform: translateY(-2.5rem);
+         opacity: 0;
+
+         ul {
+            @include flex(center, center, false);
+            gap: 2.5rem;
+         }
+      }
    }
 
    &__actions {

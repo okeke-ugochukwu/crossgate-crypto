@@ -20,7 +20,7 @@ const CgHeader = () => {
 
          <div className="header__nav">
             <CgMainNav
-               className="desktop"
+               className="desktop small-text"
                aria-label="desktop-navigation"
             />
          </div>
@@ -38,7 +38,13 @@ const CgHeader = () => {
                   type="link"
                   to="/"
                   text="Join Our Discord"
-               ></AuxButton>
+               >
+                  <img
+                    src="/src/assets/imgs/svg/discord.svg"
+                    alt="discord-icon"
+                    className="w-5"
+                  />
+               </AuxButton>
 
                <PrimaryButton 
                   type="link"

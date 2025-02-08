@@ -14,7 +14,7 @@ function initHeroAnimation() {
    })
 
    let fadeInHeaderElements =  gsap.to(gsap.utils.toArray([
-      '.header__pin', '.header__actions'
+      '.header__pin', '.header__nav', '.header__actions'
    ]), {
       y: 0, x: 0,
       opacity: 1,
@@ -36,7 +36,7 @@ function initHeroAnimation() {
 
    tl
       .add(fadeInHeaderElements, "fadeInHeaderElements")
-      .add(fadeInHeroContentElements, .3)
+      .add(fadeInHeroContentElements, .1)
 }
 
 export {

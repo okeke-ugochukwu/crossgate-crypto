@@ -10,6 +10,17 @@
    &__wrapper {
       width: 100%;
       max-width: 100%;
+      position: relative;
+      
+      &::before {
+         // position: absolute;
+         // content: '';
+         // width: 100%;
+         // height: 100%;
+         // top: 0; left: 0; 
+         // background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><radialGradient id="gradient" cx="50%" cy="0%" r="66.73%" fx="50%" fy="0%"><stop offset="0%" stop-color="white" stop-opacity="0.12" /><stop offset="100%" stop-color="white" stop-opacity="0" /></radialGradient></defs><rect width="100%" height="100%" fill="url(%23gradient)" /></svg>');
+         // opacity: .9;
+      }
    }
 
    & > .margin {
@@ -20,6 +31,12 @@
       @include tabs {
          padding-top: 2.0625rem; // 33px
       }
+   }
+
+   &__lights {
+      position: absolute;
+      top: 0;
+
    }
 
    &__text {
