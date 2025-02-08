@@ -73,7 +73,7 @@ function initAboutAnimation() {
 
       tl
          .add(fadeInLandscapeCards, "fadeInLandscapeCards")
-         .add(fadeInPortraitCards, .1)
+         .add(fadeInPortraitCards, .2)
 
    }
       

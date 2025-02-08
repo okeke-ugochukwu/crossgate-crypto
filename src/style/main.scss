@@ -14,10 +14,12 @@
 
 * {
    // transition: .3s;
-   scroll-behavior: smooth;
+
+   // NOTE: this props causes jerky scroll in chrome and the likess
+   // scroll-behavior: smooth;
+
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
-
 }
 
 html {
